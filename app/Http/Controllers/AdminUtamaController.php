@@ -1352,6 +1352,7 @@ class AdminUtamaController extends Controller
             ->select(
                 'jamaahs.id',
                 'jamaahs.kontak_darurat_hp',
+                'jamaahs.tgl_keberangkatan',
                 DB::raw("TRIM(CONCAT(jamaahs.nama_depan, ' ', COALESCE(jamaahs.nama_belakang, ''))) AS nama_lengkap"),
                 'pakets.nama_paket',
                 'pakets.tgl_berangkat'
@@ -1367,8 +1368,8 @@ class AdminUtamaController extends Controller
     {
         $token = env('FONNTE_TOKEN');
 
-        // $target = $request->no_telepon;   // nomor tujuan
-        $target = "083809808665";
+        $target = $request->no_telepon;   // nomor tujuan
+        // $target = "083809808665";
         $pesan  = $request->pesan;    // isi pesan
 
         $curl = curl_init();
@@ -1403,8 +1404,8 @@ class AdminUtamaController extends Controller
     {
         $token = env('FONNTE_TOKEN');
 
-        // $target = $request->no_telepon;   // nomor tujuan
-        $target = "083809808665";
+        $target = $request->no_telepon;   // nomor tujuan
+        // $target = "083809808665";
         $pesan  = $request->pesan;    // isi pesan
 
         $curl = curl_init();

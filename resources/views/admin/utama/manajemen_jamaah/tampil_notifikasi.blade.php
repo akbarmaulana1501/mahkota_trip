@@ -109,9 +109,15 @@
                                             <input type="text" name="paket" class="form-control" value="{{$jamaah->nama_paket}}" readonly>
                                         </div>
 
+                                        @php
+                                        $tanggal = $jamaah->nama_paket == 'Umroh Private'
+                                        ? $jamaah->tgl_keberangkatan
+                                        : $jamaah->tgl_berangkat;
+                                        @endphp
+
                                         <div class="form-group">
                                             <label>Tanggal Keberangkatan</label>
-                                            <input type="text" name="tgl_berangkat" value="{{$jamaah->tgl_berangkat}}" class="form-control" readonly>
+                                            <input type="text" name="tgl_berangkat" value="{{$tanggal}}" class="form-control" readonly>
                                         </div>
 
                                         <div class="form-group">
@@ -121,7 +127,7 @@ Yth. Bapak/Ibu {{$jamaah->nama_lengkap}},
 
 Dengan hormat, kami informasikan bahwa pembayaran Anda telah dinyatakan LUNAS dan seluruh data keberangkatan telah berhasil divalidasi oleh pihak administrasi.
 
-Alhamdulillah, saat ini Bapak/Ibu telah resmi terdaftar sebagai calon jemaah keberangkatan tanggal {{$jamaah->tgl_berangkat}} .
+Alhamdulillah, saat ini Bapak/Ibu telah resmi terdaftar sebagai calon jemaah keberangkatan tanggal {{$tanggal}} .
 
 Selanjutnya:
 Silakan menunggu informasi berikutnya terkait jadwal manasik, pembagian perlengkapan, dan keberangkatan. Informasi akan disampaikan melalui grup resmi dan pesan pribadi.

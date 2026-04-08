@@ -15,7 +15,7 @@
 
                 <div class="modal-body text-center">
 
-                    <img src="{{ asset('template/assets/dist/img/user2-160x160.jpg') }}"
+                    <img src="{{ asset('template/assets/dist/img/pic-1.png') }}"
                         class="img-circle mb-3" width="100">
 
                     <h5>{{ auth()->user()->username }}</h5>
